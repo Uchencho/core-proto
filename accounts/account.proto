@@ -1,0 +1,25 @@
+syntax = "proto3";
+package accounts;
+option go_package = "github.com/Uchencho/core-proto;accounts";
+
+import "google/protobuf/timestamp.proto";
+
+message CreateAccountRequest {
+    string FirstName = 1;
+    string LastName = 2;
+    string Address = 3;
+    int64 Age = 4;
+}
+
+message GetAccountRequest {
+    string AccountId = 1;
+}
+
+message Account {
+    string Id = 1;
+    string FirstName = 2;
+    string LastName = 3;
+    string Address = 4;
+    int64 Age = 5;
+    google.protobuf.Timestamp CreatedAt = 6;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+package accounts;
+option go_package = "github.com/Uchencho/core-proto;accounts";
+
+import "google/protobuf/empty.proto";
+import "accounts/account.proto";
+
+service Client {
+    rpc CreateAccount(CreateAccountRequest) returns (google.protobuf.Empty);
+    rpc GetAccount(GetAccountRequest) returns (Account);
+}
